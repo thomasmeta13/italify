@@ -9,10 +9,21 @@ import { properties } from "@/data/properties"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Property } from "@/types/database"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { useRouter } from "next/navigation"
 
 export default function Home() {
+  const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
   const [featuredProperties, setFeaturedProperties] = useState<Property[]>([])
+  const [searchQuery, setSearchQuery] = useState("")
+  const [propertyType, setPropertyType] = useState<"buy" | "rent">("buy")
 
   useEffect(() => {
     // Load and filter properties
@@ -25,6 +36,16 @@ export default function Home() {
     }, 1000)
     return () => clearTimeout(timer)
   }, [])
+
+  const handleSearch = () => {
+    // Construct the search URL with parameters
+    const searchParams = new URLSearchParams()
+    if (searchQuery) searchParams.set("q", searchQuery)
+    searchParams.set("type", propertyType)
+    
+    // Navigate to properties page with search parameters
+    router.push(`/properties?${searchParams.toString()}`)
+  }
 
   return (
     <div className="space-y-16">
@@ -41,15 +62,36 @@ export default function Home() {
           </p>
           
           {/* Search Bar */}
-          <div className="flex w-full max-w-2xl gap-4">
-            <Input
-              placeholder="Search by location, property type..."
-              className="bg-white/90 text-black"
-            />
-            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700">
-              <Search className="mr-2 h-4 w-4" />
-              Search
-            </Button>
+          <div className="flex flex-col sm:flex-row w-full max-w-2xl gap-4">
+            <Select
+              value={propertyType}
+              onValueChange={(value: "buy" | "rent") => setPropertyType(value)}
+            >
+              <SelectTrigger className="bg-white/90 text-black w-full sm:w-[200px]">
+                <SelectValue placeholder="I want to..." />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="buy">Buy Property</SelectItem>
+                <SelectItem value="rent">Rent Property</SelectItem>
+              </SelectContent>
+            </Select>
+            <div className="flex flex-1 gap-4">
+              <Input
+                placeholder="Search by location, property type..."
+                className="bg-white/90 text-black flex-1"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+              />
+              <Button 
+                size="lg" 
+                className="bg-emerald-600 hover:bg-emerald-700"
+                onClick={handleSearch}
+              >
+                <Search className="mr-2 h-4 w-4" />
+                Search
+              </Button>
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,5 @@
-export type Property = {
+export interface Property {
   id: string
-  created_at: string
   title: string
   description: string
   price: number
@@ -9,11 +8,14 @@ export type Property = {
   bedrooms: number
   bathrooms: number
   size_sqm: number
-  property_type: 'villa' | 'apartment' | 'house' | 'estate'
+  property_type: string
   features: string[]
   images: string[]
   is_featured: boolean
-  status: 'available' | 'sold' | 'pending'
+  is_rental: boolean
+  status: string
+  coordinates: number[]
+  created_at?: string // Made optional since it's not in our mock data
 }
 
 export type User = {

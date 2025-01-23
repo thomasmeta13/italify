@@ -1,5 +1,9 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
+import { motion } from "framer-motion"
 
 const team = [
   {
@@ -43,83 +47,151 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="space-y-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[400px] rounded-2xl overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216"
-          alt="Italian countryside"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4">
-          <h1 className="text-4xl font-bold mb-4">About Italify.au</h1>
-          <p className="text-xl max-w-2xl">
-            Connecting Australians with their dream Italian lifestyle since 2024
-          </p>
+      <section className="relative h-[50vh] bg-emerald-900">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900 to-emerald-800 opacity-90" />
+        <div className="relative h-full flex flex-col items-center justify-center text-white text-center px-4">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl font-bold mb-6"
+          >
+            About Italify
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl max-w-2xl"
+          >
+            Bridging Australia and Italy through exceptional property experiences
+          </motion.p>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-        <p className="text-gray-600 mb-4">
-          Italify.au was born from a passion for Italian culture and a desire to help Australians 
-          experience the authentic Italian lifestyle. What started as a dream to bridge the gap 
-          between Australia and Italy has grown into a comprehensive platform that helps people 
-          find their perfect Italian home and lifestyle.
-        </p>
-        <p className="text-gray-600">
-          Our team combines local Italian expertise with deep understanding of Australian clients' 
-          needs, ensuring a seamless transition to Italian life.
-        </p>
-      </section>
-
-      {/* Our Values */}
-      <section>
-        <h2 className="text-3xl font-bold mb-8 text-center">Our Values</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((value) => (
-            <div key={value.title} className="text-center">
-              <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Team */}
-      <section>
-        <h2 className="text-3xl font-bold mb-8 text-center">Our Team</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member) => (
-            <div key={member.name} className="text-center">
-              <div className="relative w-48 h-48 mx-auto mb-6">
+      {/* Founder Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl"
+              >
                 <Image
-                  src={member.image}
-                  alt={member.name}
+                  src="/borana.jpeg"
+                  alt="Borana Meta"
                   fill
-                  className="object-cover rounded-full"
+                  className="object-cover"
+                  priority
                 />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-              <p className="text-emerald-600 font-medium mb-2">{member.role}</p>
-              <p className="text-gray-600">{member.description}</p>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <span className="text-emerald-600 font-semibold">Our Founder</span>
+                <h2 className="text-4xl font-bold">Borana Meta</h2>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  With a deep understanding of both Italian culture and real estate, 
+                  Borana Meta founded Italify with a vision to make the Italian property 
+                  market accessible to international buyers. Her expertise in Italian real 
+                  estate and passion for helping others find their perfect home has made 
+                  Italify a trusted name in the industry.
+                </p>
+                <div className="pt-6">
+                  <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700">
+                    <Link href="/contact">Connect with Borana</Link>
+                  </Button>
+                </div>
+              </motion.div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-emerald-50 rounded-2xl p-12 text-center">
-        <h2 className="text-3xl font-bold mb-4">Start Your Italian Journey</h2>
-        <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-          Let us help you discover your perfect Italian lifestyle
-        </p>
-        <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700">
-          Contact Us
-        </Button>
+      {/* Mission & Values */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-6">Our Mission & Values</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We're dedicated to providing exceptional service and guidance to those seeking 
+                their dream property in Italy, ensuring a seamless experience from start to finish.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Authenticity",
+                  description: "We maintain genuine relationships and provide authentic Italian experiences.",
+                  icon: "🏛️"
+                },
+                {
+                  title: "Excellence",
+                  description: "We uphold the highest standards in every aspect of our service.",
+                  icon: "⭐"
+                },
+                {
+                  title: "Trust",
+                  description: "We build lasting relationships based on transparency and integrity.",
+                  icon: "🤝"
+                }
+              ].map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="bg-white p-8 rounded-2xl shadow-lg text-center"
+                >
+                  <div className="text-4xl mb-4">{value.icon}</div>
+                  <h3 className="text-xl font-bold mb-4">{value.title}</h3>
+                  <p className="text-gray-600">{value.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-emerald-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl font-bold mb-6">Start Your Italian Journey</h2>
+              <p className="text-xl mb-8">
+                Let us help you discover your perfect Italian property and lifestyle
+              </p>
+              <Button asChild size="lg" variant="outline" className="bg-transparent border-2">
+                <Link href="/properties">View Properties</Link>
+              </Button>
+            </motion.div>
+          </div>
+        </div>
       </section>
     </div>
   )

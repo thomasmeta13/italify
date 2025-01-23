@@ -16,6 +16,7 @@ export const properties = [
       'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9'
     ],
     is_featured: true,
+    is_rental: false,
     status: 'available',
     coordinates: [11.2558, 43.7696], // Chianti coordinates
   },
@@ -36,6 +37,7 @@ export const properties = [
       'https://images.unsplash.com/photo-1615529182904-14819c35db38'
     ],
     is_featured: true,
+    is_rental: true,
     status: 'available',
     coordinates: [14.4833, 40.6333], // Positano coordinates
   },
@@ -56,6 +58,7 @@ export const properties = [
       'https://images.unsplash.com/photo-1533929736458-ca588d08c8be'
     ],
     is_featured: true,
+    is_rental: false,
     status: 'available',
     coordinates: [11.2558, 43.7696], // Florence coordinates
   },
@@ -76,6 +79,7 @@ export const properties = [
       'https://images.unsplash.com/photo-1518780664697-55e3ad937234'
     ],
     is_featured: true,
+    is_rental: true,
     status: 'available',
     coordinates: [9.2619, 45.9865], // Bellagio coordinates
   },
@@ -96,6 +100,7 @@ export const properties = [
       'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a8'
     ],
     is_featured: true,
+    is_rental: false,
     status: 'available',
     coordinates: [12.3908, 43.1107], // Perugia coordinates
   },
@@ -116,6 +121,7 @@ export const properties = [
       'https://images.unsplash.com/photo-1523217582562-09d0def993a7'
     ],
     is_featured: true,
+    is_rental: true,
     status: 'available',
     coordinates: [12.3155, 45.4408], // Venice coordinates
   },
