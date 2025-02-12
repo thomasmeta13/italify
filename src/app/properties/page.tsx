@@ -29,13 +29,13 @@ function PropertiesContent() {
   const [isLoading, setIsLoading] = useState(true)
   const [filteredProperties, setFilteredProperties] = useState<Property[]>([])
   const [locationSuggestions, setLocationSuggestions] = useState<string[]>([])
-  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "")
+  const [searchQuery, setSearchQuery] = useState(searchParams?.get("q") ?? "")
   const [filters, setFilters] = useState({
     region: "",
     propertyType: "",
     priceRange: "",
     bedrooms: "",
-    listingType: searchParams.get("type") || "buy"
+    listingType: searchParams?.get("type") ?? "buy"
   })
 
   // Handle location search and suggestions
