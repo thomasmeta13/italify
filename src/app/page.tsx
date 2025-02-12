@@ -56,9 +56,9 @@ export default function Home() {
         </div>
         
         <div className="relative h-full flex flex-col items-center justify-center text-white text-center px-4">
-          <h1 className="text-5xl font-bold mb-6">Find Your Dream Italian Home</h1>
+          <h1 className="text-5xl font-bold mb-6">Find Your Dream Italian Home – Italify Your Life, Your Way</h1>
           <p className="text-xl mb-8 max-w-2xl">
-            Discover luxury Italian properties and experience the authentic Italian lifestyle
+            At Italify, we help Australians connect with the charm and authenticity of Italian living. From properties to relocation, we make every step seamless.
           </p>
           
           {/* Search Bar */}
@@ -77,7 +77,7 @@ export default function Home() {
             </Select>
             <div className="flex flex-1 gap-4">
               <Input
-                placeholder="Search by location, property type..."
+                placeholder="Search Tuscany Villas | Amalfi Apartments | Rome Rentals"
                 className="bg-white/90 text-black flex-1"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -85,13 +85,32 @@ export default function Home() {
               />
               <Button 
                 size="lg" 
-                className="bg-emerald-600 hover:bg-emerald-700"
+                className="bg-[#004225] hover:bg-[#003319]"
                 onClick={handleSearch}
               >
                 <Search className="mr-2 h-4 w-4" />
                 Search
               </Button>
             </div>
+          </div>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-[#004225] hover:bg-[#003319]"
+            >
+              <Link href="/properties">Explore Properties</Link>
+            </Button>
+            <Button 
+              asChild 
+              size="lg" 
+              variant="outline" 
+              className="bg-white/10 hover:bg-white/20 text-white border-white"
+            >
+              <Link href="/relocation">Learn More About Relocation Services</Link>
+            </Button>
           </div>
         </div>
       </section>

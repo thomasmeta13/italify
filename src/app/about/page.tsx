@@ -58,7 +58,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-5xl font-bold mb-6"
           >
-            About Italify
+            Meet Borana Meta – The Visionary Behind Italify
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -98,17 +98,24 @@ export default function AboutPage() {
                 transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
-                <span className="text-emerald-600 font-semibold">Our Founder</span>
+                <span className="text-[#004225] font-semibold">Our Founder</span>
                 <h2 className="text-4xl font-bold">Borana Meta</h2>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  With a deep understanding of both Italian culture and real estate, 
-                  Borana Meta founded Italify with a vision to make the Italian property 
-                  market accessible to international buyers. Her expertise in Italian real 
-                  estate and passion for helping others find their perfect home has made 
-                  Italify a trusted name in the industry.
+                  Borana Meta brings a unique blend of experience in property development and the Italian travel industry, 
+                  making her the perfect guide for Australians seeking to embrace the Italian lifestyle. Having worked in 
+                  property development in Australia, Borana has gained invaluable insight into creating spaces that people 
+                  dream of calling home. Before that, she spent years in Italy's travel industry, working closely with 
+                  Australian travelers to craft unforgettable experiences and showcasing the charm, beauty, and authenticity 
+                  of her homeland.
+                </p>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  This dual expertise—combining a deep understanding of Australian aspirations with firsthand knowledge of 
+                  Italy's rich culture and lifestyle—drives Italify's mission to connect Australians with their dream of 
+                  Italian living. Borana's passion lies in making the process seamless, whether it's finding the perfect 
+                  property or navigating the journey of relocation.
                 </p>
                 <div className="pt-6">
-                  <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700">
+                  <Button asChild size="lg" className="bg-[#004225] hover:bg-[#003319]">
                     <Link href="/contact">Connect with Borana</Link>
                   </Button>
                 </div>
@@ -129,29 +136,30 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6">Our Mission & Values</h2>
+              <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We're dedicated to providing exceptional service and guidance to those seeking 
-                their dream property in Italy, ensuring a seamless experience from start to finish.
+                At Italify, our mission is to make the dream of Italian living a reality for Australians. With a foundation 
+                in property development and years of experience in Italy's travel industry, we bring an unparalleled 
+                understanding of what it takes to create authentic, meaningful connections between Australia and Italy.
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Authenticity",
-                  description: "We maintain genuine relationships and provide authentic Italian experiences.",
-                  icon: "🏛️"
+                  title: "Experience in Property Development",
+                  description: "Borana's background in property development equips her with a strong understanding of the foundations for building dream spaces.",
+                  icon: "🏗️"
                 },
                 {
-                  title: "Excellence",
-                  description: "We uphold the highest standards in every aspect of our service.",
-                  icon: "⭐"
+                  title: "Expert in Italian Travel & Lifestyle",
+                  description: "Years spent curating experiences for Australians in Italy give Borana unparalleled insight into the charm and authenticity her clients are seeking.",
+                  icon: "✈️"
                 },
                 {
-                  title: "Trust",
-                  description: "We build lasting relationships based on transparency and integrity.",
-                  icon: "🤝"
+                  title: "A Unique Perspective",
+                  description: "With roots in Italy and professional experience in Australia, Borana bridges two worlds to make relocating to Italy seamless and fulfilling.",
+                  icon: "🌍"
                 }
               ].map((value, index) => (
                 <motion.div

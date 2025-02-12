@@ -71,9 +71,9 @@ export default function RelocationPage() {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4">
-          <h1 className="text-4xl font-bold mb-4">Start Your Italian Life</h1>
+          <h1 className="text-4xl font-bold mb-4">Simplify Your Move to Italy – Start Your New Chapter with Italify</h1>
           <p className="text-xl max-w-2xl">
-            Comprehensive relocation services to help you move to Italy seamlessly
+            From navigating visa requirements to finding your dream home, our relocation experts handle every detail so you can focus on living the Italian lifestyle.
           </p>
         </div>
       </section>
@@ -82,9 +82,35 @@ export default function RelocationPage() {
       <section>
         <h2 className="text-3xl font-bold mb-8 text-center">Our Process</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step) => (
-            <div key={step.number} className="relative">
-              <div className="text-5xl font-bold text-emerald-600/20 mb-4">
+          {[
+            {
+              number: "01",
+              title: "Initial Consultation",
+              description: "Discuss your plans and goals for moving to Italy",
+              icon: "💬"
+            },
+            {
+              number: "02",
+              title: "Documentation",
+              description: "We'll guide you through visa applications, residency permits, and legal paperwork",
+              icon: "📄"
+            },
+            {
+              number: "03",
+              title: "Property Setup",
+              description: "Find and set up your perfect Italian home",
+              icon: "🏠"
+            },
+            {
+              number: "04",
+              title: "Integration",
+              description: "Settle into your new life with support for utilities, cultural orientation, and more",
+              icon: "🌍"
+            }
+          ].map((step) => (
+            <div key={step.number} className="relative bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-4xl mb-4">{step.icon}</div>
+              <div className="text-3xl font-bold text-[#004225]/20 mb-4">
                 {step.number}
               </div>
               <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
@@ -108,7 +134,7 @@ export default function RelocationPage() {
               <ul className="space-y-3">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-emerald-600" />
+                    <Check className="h-5 w-5 text-[#004225]" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -119,12 +145,16 @@ export default function RelocationPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-emerald-50 rounded-2xl p-12 text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Make the Move?</h2>
-        <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-          Let us help you start your Italian journey. Schedule a consultation with our relocation experts.
+      <section className="bg-[#004225] rounded-2xl p-12 text-center text-white">
+        <h2 className="text-3xl font-bold mb-4">Let Us Italify Your Move – Seamless Relocation to Italy Awaits</h2>
+        <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+          Start your Italian journey with confidence. Schedule a consultation with our relocation experts today.
         </p>
-        <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700">
+        <Button 
+          size="lg" 
+          variant="outline"
+          className="bg-transparent border-2 border-white hover:bg-white hover:text-[#004225] transition-colors"
+        >
           Schedule Consultation
         </Button>
       </section>
