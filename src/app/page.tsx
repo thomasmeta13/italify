@@ -50,24 +50,24 @@ export default function Home() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative h-[600px] -mt-8">
-        <div className="absolute inset-0 bg-[url('/hero.jpg')] bg-cover bg-center">
-          <div className="absolute inset-0 bg-black/40" />
+      <section className="relative h-[80vh] -mx-4 sm:-mx-8 md:-mx-16 lg:-mx-24">
+        <div className="absolute inset-0 bg-[url('/hero.jpg')] bg-cover bg-center bg-fixed">
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         
         <div className="relative h-full flex flex-col items-center justify-center text-white text-center px-4">
-          <h1 className="text-5xl font-bold mb-6">Find Your Dream Italian Home – Italify Your Life, Your Way</h1>
-          <p className="text-xl mb-8 max-w-2xl">
-            At Italify, we help Australians connect with the charm and authenticity of Italian living. From properties to relocation, we make every step seamless.
+          <h1 className="text-6xl font-light mb-6 tracking-wide">Your Dream Italian Home</h1>
+          <p className="text-xl mb-12 tracking-wider font-light">
+            Discover authentic Italian properties with expert guidance
           </p>
           
           {/* Search Bar */}
-          <div className="flex flex-col sm:flex-row w-full max-w-2xl gap-4">
+          <div className="flex flex-col sm:flex-row w-full max-w-3xl gap-4 backdrop-blur-sm bg-white/10 p-6 rounded-lg">
             <Select
               value={propertyType}
               onValueChange={(value: "buy" | "rent") => setPropertyType(value)}
             >
-              <SelectTrigger className="bg-white/90 text-black w-full sm:w-[200px]">
+              <SelectTrigger className="bg-white/90 text-black w-full sm:w-[200px] border-0">
                 <SelectValue placeholder="I want to..." />
               </SelectTrigger>
               <SelectContent>
@@ -77,15 +77,15 @@ export default function Home() {
             </Select>
             <div className="flex flex-1 gap-4">
               <Input
-                placeholder="Search Tuscany Villas | Amalfi Apartments | Rome Rentals"
-                className="bg-white/90 text-black flex-1"
+                placeholder="Search locations in Italy..."
+                className="bg-white/90 text-black flex-1 border-0"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
               />
               <Button 
                 size="lg" 
-                className="bg-[#004225] hover:bg-[#003319]"
+                className="bg-[#004225] hover:bg-[#003319] px-8"
                 onClick={handleSearch}
               >
                 <Search className="mr-2 h-4 w-4" />
@@ -95,21 +95,13 @@ export default function Home() {
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+          <div className="flex gap-4 mt-12">
             <Button 
               asChild 
               size="lg" 
-              className="bg-[#004225] hover:bg-[#003319]"
+              className="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm px-8 tracking-wide"
             >
-              <Link href="/properties">Explore Properties</Link>
-            </Button>
-            <Button 
-              asChild 
-              size="lg" 
-              variant="outline" 
-              className="bg-white/10 hover:bg-white/20 text-white border-white"
-            >
-              <Link href="/relocation">Learn More About Relocation Services</Link>
+              <Link href="/properties">View Properties</Link>
             </Button>
           </div>
         </div>
@@ -118,10 +110,8 @@ export default function Home() {
       {/* Featured Properties */}
       <section className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Featured Properties</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our handpicked selection of the finest properties across Italy
-          </p>
+          <span className="text-emerald-600 text-sm tracking-widest uppercase">Curated Selection</span>
+          <h2 className="text-3xl font-light mt-2">Featured Properties</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -139,24 +129,27 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-12">
-          <Button asChild size="lg">
+          <Button 
+            asChild 
+            size="lg"
+            className="px-8 tracking-wide bg-[#004225] hover:bg-[#003319]"
+          >
             <Link href="/properties">View All Properties</Link>
           </Button>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-emerald-50 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4 text-center">Ready to Start Your Italian Journey?</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-center">
-            Let us help you find the perfect property and guide you through every step of your Italian adventure
-          </p>
-          <div className="text-center">
-            <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700">
-              <Link href="/contact">Get Started Today</Link>
-            </Button>
-          </div>
+      <section className="bg-[#004225]/5 py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-light mb-8">Ready to Start Your Italian Journey?</h2>
+          <Button 
+            asChild 
+            size="lg" 
+            className="bg-[#004225] hover:bg-[#003319] px-8 tracking-wide"
+          >
+            <Link href="/contact">Contact Us</Link>
+          </Button>
         </div>
       </section>
     </div>

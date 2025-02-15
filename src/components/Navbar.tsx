@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-emerald-700">
-            Italify.au
+            italify.com.au
           </Link>
           
           <div className="hidden md:flex items-center gap-6">

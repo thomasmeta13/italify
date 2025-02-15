@@ -7,8 +7,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: "hello@italify.au",
-    link: "mailto:hello@italify.au",
+    details: "hello@italify.com.au",
+    link: "mailto:hello@italify.com.au",
   },
   {
     icon: Phone,

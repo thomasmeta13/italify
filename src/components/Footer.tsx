@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand & Description */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif">Italify.au</h3>
+            <h3 className="text-2xl font-serif">italify.com.au</h3>
             <p className="text-white/80 text-sm">
               Your Partner in Authentic Italian Living – Italify Your Life
             </p>
@@ -75,7 +75,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2 text-white/80">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:info@italify.au">info@italify.au</a>
+                <a href="mailto:info@italify.com.au">info@italify.com.au</a>
               </li>
               <li className="flex items-center gap-2 text-white/80">
                 <Phone className="h-4 w-4" />
@@ -116,7 +116,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/60">
-          <p>© {new Date().getFullYear()} Italify.au. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} italify.com.au. All rights reserved.</p>
         </div>
       </div>
     </footer>

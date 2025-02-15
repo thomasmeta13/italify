@@ -1,11 +1,11 @@
-**Product Requirements Document (PRD): Italify.au**
+**Product Requirements Document (PRD): italify.com.au**
 
 ---
 
 ### **1. Introduction**
 
 **Purpose:**
-Italify.au aims to bridge the gap between Australians dreaming of Italian living and the luxurious villas and houses available in Italy. The platform offers an easy-to-navigate website that facilitates:
+italify.com.au aims to bridge the gap between Australians dreaming of Italian living and the luxurious villas and houses available in Italy. The platform offers an easy-to-navigate website that facilitates:
 
 - **Buying and Renting Houses in Italy:** A network of high-end properties tailored to Australian preferences.
 - **Travel Experiences:** Organizing trips, tours, and tailored Italian experiences.
@@ -100,7 +100,7 @@ Italify.au aims to bridge the gap between Australians dreaming of Italian living
 
 #### **About Us Page:**
 
-- Story of Italify.au.
+- Story of italify.com.au.
 - Vision and mission statement.
 - Team bios and photos.
 
@@ -204,5 +204,5 @@ Italify.au aims to bridge the gap between Australians dreaming of Italian living
 
 ### **10. Conclusion**
 
-Italify.au will serve as a premier platform connecting Australians to the luxurious living and cultural experiences of Italy. By blending technology with a touch of elegance, it will redefine the process of finding a dream Italian home or planning an unforgettable Italian journey.
+italify.com.au will serve as a premier platform connecting Australians to the luxurious living and cultural experiences of Italy. By blending technology with a touch of elegance, it will redefine the process of finding a dream Italian home or planning an unforgettable Italian journey.
 
